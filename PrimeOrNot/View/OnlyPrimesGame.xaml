@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+             x:Class="PrimeOrNot.View.OnlyPrimesGame"
+             BackgroundColor="#EEE" 
+ NavigationPage.HasNavigationBar="False"
+             Title ="ONLY PRIMES" >
+    <ContentPage.Content>
+        <StackLayout x:Name="MyStack" >
+            <forms:AnimationView x:Name="MyAnimationView" Margin="0,10,0,0"
+                         Animation="7820-5-sec.json"
+                AutoPlay="True"
+                  NavigationPage.HasNavigationBar="False"
+                   WidthRequest="45" 
+                                 Speed="3"
+                                     HeightRequest="25"
+                                 OnFinish="AnimationView_OnFinish"
+                          />
+
+            <swipeCardView:SwipeCardView
+                
+                x:Name="SwipeCardView"
+                ItemsSource="{Binding Numbers}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Padding="10"
+                SwipedCommand="{Binding SwipedCommand}"
+                DraggingCommand="{Binding DraggingCommand}"
+                Threshold="{Binding Threshold}"
+                SupportedSwipeDirections="Left, Right, Up"
+                SupportedDraggingDirections="Left, Right, Up, Down">
+                <swipeCardView:SwipeCardView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+                            <Frame CornerRadius="10" Padding="0" HorizontalOptions="FillAndExpand"  BackgroundColor="{Binding Correct,  Converter={StaticResource BooleanToColorConverter} }"  VerticalOptions="FillAndExpand">
+                                <AbsoluteLayout>
+                                    <!--<Label x:Name="MyLabel" Text="{Binding Value}"  AbsoluteLayout.LayoutBounds=".5,0.5,1,1" AbsoluteLayout.LayoutFlags="All" />-->
+                                    <Frame x:Name="LikeFrame"  BorderColor="#63DD99" BackgroundColor="Transparent" Padding="0" CornerRadius="20" AbsoluteLayout.LayoutBounds="0.1,.1, 150, 50"
+                                         AbsoluteLayout.LayoutFlags="PositionProportional"  Rotation="-20" Opacity="0">
+                                        <Label x:Name="LikeText" Text="PRIME" TextColor="#63DD99" BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="32"></Label>
+                                    </Frame>
+                                    <Frame x:Name="NopeFrame" BorderColor="#FF6A4F" BackgroundColor="Transparent" Padding="0" CornerRadius="20" AbsoluteLayout.LayoutBounds="0.9,.1, 150, 50"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"  Rotation="20" Opacity="0">
+                                        <Label Text="NOT" TextColor="#FF6A4F" BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="32"></Label>
+                                    </Frame>
+                                    <Frame x:Name="SuperLikeFrame" BorderColor="#2196F3" BackgroundColor="Transparent" Padding="0" CornerRadius="20" AbsoluteLayout.LayoutBounds="0.5,.7, 150, 100"
+                                        AbsoluteLayout.LayoutFlags="PositionProportional"  Rotation="-20" Opacity="0">
+                                        <Label Text="SKIP" TextColor="#2196F3" BackgroundColor="Transparent" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="32"></Label>
+                                    </Frame>
+                                    <Label FontSize="72" Text="{Binding Value}" FontAttributes="Bold" TextColor="Black"  Padding="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="MyAwesomeCustomFont"  AbsoluteLayout.LayoutFlags="PositionProportional"  AbsoluteLayout.LayoutBounds="0.5,.40, 250, 150">
+                                    </Label>
+                                    <Label FontSize="42" Text="{Binding Factors}" FontAttributes="Bold" TextColor="Black"  Padding="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="MyAwesomeCustomFont"  AbsoluteLayout.LayoutFlags="PositionProportional"  AbsoluteLayout.LayoutBounds="0.5,.8, 350, 150">
+                                    </Label>
+                               
+
+                                </AbsoluteLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </swipeCardView:SwipeCardView.ItemTemplate>
+            </swipeCardView:SwipeCardView>
+            <FlexLayout x:Name="FlexL"  VerticalOptions="End" Margin="0,-7,0,0"
+                          Wrap="Wrap"
+                        JustifyContent="Start" HeightRequest="110"  >
+
+
+           
+
+
+
+
+            </FlexLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

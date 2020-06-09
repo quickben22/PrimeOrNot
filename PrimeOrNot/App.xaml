@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:local2="clr-namespace:PrimeOrNot.Converters"
+             x:Class="PrimeOrNot.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+
+            <Color x:Key="MyAccent">#E16C51</Color>
+            <Color x:Key="MyWhite">#FFFFFF</Color>
+
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#ff5733"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MyAccent}"/>
+                <Setter Property="TextColor" Value="{StaticResource MyWhite}"/>
+                <Setter Property="BorderRadius" Value="25"/>
+                <Setter Property="BorderWidth" Value="2"/>
+            </Style>
+
+            <local2:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

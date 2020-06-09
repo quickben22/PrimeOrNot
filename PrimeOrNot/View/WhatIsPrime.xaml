@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              NavigationPage.HasNavigationBar="False"
+             x:Class="PrimeOrNot.View.WhatIsPrime"
+              Title ="WHAT IS A PRIME?"
+             >
+  <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" Padding="5" Margin="0,50,0,0" Spacing="15">
+            <Label FontSize="Title" Text="PRIME NUMBERS" HorizontalOptions="Center" />
+            <Label FontSize="Medium" Text="Prime numbers are special numbers that can only be divided by themselves and 1." />
+            <Label FontSize="Medium"  Text="19 is a prime number. It can only be divided by 1 and 19." />
+            <Label FontSize="Medium" Text="9 is not a prime number. It can be divided by 3 as well as 1 and 9." />
+            <Label FontSize="Medium" Text="The prime numbers below 20 are: 2, 3, 5, 7, 11, 13, 17, 19." />
+            <Label FontSize="Medium" Text="Don't forget: the number 1 is not thought of as a prime number." />
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
+
+

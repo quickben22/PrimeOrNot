@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PrimeOrNot.View.Popup3"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout
+            WidthRequest="200"
+            Padding="10"
+            BackgroundColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="12"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                HorizontalOptions="Center"
+                x:Name="TitleLabel"
+                FontSize="Large"
+                Text="TIME IS UP!" />
+            <Label HorizontalOptions="Center"
+                FontSize="Medium"
+                Text="What next?"
+                />
+      
+        
+            <Button Clicked="Play_Clicked"  Text="Play Again" WidthRequest="70">
+                <Button.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="40" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </Button.HeightRequest>
+            </Button>
+            <Button Clicked="Results_Clicked"  Text="Results" WidthRequest="70">
+                <Button.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="40" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </Button.HeightRequest>
+            </Button>
+            <Button Clicked="CloseButton_Clicked" x:Name="CloseButton" Text="Close" WidthRequest="70">
+                <Button.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="40" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </Button.HeightRequest>
+            </Button>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
